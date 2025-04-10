@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Te Amo!</title>
+  <style>
+    body {
+      background-color: #0a0a23;
+      color: white;
+      text-align: center;
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    img {
+      max-width: 40%;
+      border-radius: 15px;
+      margin: 20px 0;
+    }
+    #contador {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    iframe {
+      margin: 20px 0;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <h2>🎵 Djavan - Um Amor Puro</h2>
+  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3PlKQNlbL4767rND3HnqSI?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+  <img src="foto linda.jpg" alt="Foto do casal" />
+  <div id="contador">Carregando tempo...</div>
+
+  <script>
+    const dataInicio = new Date("2024-04-10T00:00:00");
+
+    function atualizarContador() {
+      const agora = new Date();
+      const diff = agora - dataInicio;
+
+      const segundos = Math.floor(diff / 1000) % 60;
+      const minutos = Math.floor(diff / 1000 / 60) % 60;
+      const horas = Math.floor(diff / 1000 / 60 / 60) % 24;
+      const dias = Math.floor(diff / 1000 / 60 / 60 / 24) % 365;
+      const anos = Math.floor(diff / 1000 / 60 / 60 / 24 / 365);
+
+      document.getElementById("contador").innerHTML =
+        `❤️ Eu te amo há: ${anos} ano, ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+    }
+
+    setInterval(atualizarContador, 1000);
+  </script>
+</body>
+</html>
